@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>OmbuduyApi</title>
+  <title>Ombudsman</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render :partial => '/layouts/header' %>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span4">
+        <div class="well sidebar-nav">
+          <%= render :partial => '/layouts/sidebar'%>
+        </div><!--/.well -->
+      </div><!--/span-->
+      <div class="span8">
+        <div class="hero-unit">
+          <%= yield %>
+        </div>
+      </div><!--/span-->
+    </div><!--/row-->
 
-<%= yield %>
+    <hr>
 
+    <footer>
+      <p>&copy; <a href="http://2012.desarrollandoamerica.org/">Desarrollando Am&eacute;rica 2012</a> | <a href="http://twitter.com/ombuduy">Ombud en Twitter</a></p>
+    </footer>
+
+    <div><!--/.fluid-container-->
 </body>
 </html>
