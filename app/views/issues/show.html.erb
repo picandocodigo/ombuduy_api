@@ -2,13 +2,13 @@
   <h1>Reporte #<%= @issue.id %></h1>
   <p><strong>Detalle</strong>:
     <blockquote>
-      <%= @issue.text %> | 
+      <%= @issue.text %> |
       <%= render_cell :tweets, :issue_tweet, tweet_id: @issue.tweet_id %>
     </blockquote>
   </p>
   <i class="icon-thumbs-up"></i> Relevancia: <%= @issue.relevance %>
   <%= render "map" %>
-  
+
   <% unless @issue.image_url.empty? %>
     <h3>Foto</h3>
     <img src="<%= @issue.image_url %>"/>
@@ -30,6 +30,16 @@
     <button class="btn">Agregar información</button>
     <button class="btn">Responder en Twitter</button>
     <button class="btn">Hacer RT</button>
+  </div>
+
+  <% unless @issue.replies.empty? %>
+    <ul>
+    <% @issues.replies.each do |reply| %>
+      <li><%= reply.text %></li>
+    <% end %>
+    </ul>
+  <% end %>
+  <div>
   </div>
 
 </div>
