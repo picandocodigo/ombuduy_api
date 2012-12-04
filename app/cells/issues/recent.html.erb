@@ -1,0 +1,8 @@
+<% unless @issues.empty? %>
+  <h3>Reportes</h3>
+  <% @issues.each do |issue| %>
+    <p>
+      <%= link_to issue.text, issue_path(issue) %>
+    </p>
+  <% end %>
+<% end %>

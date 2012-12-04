@@ -1,46 +1,32 @@
 <div>
-<h1>Reporte #<%= @issue.id %></h1>
-<p><%= @issue.text %></p>
-
-<% if @issue.latitude != 0  && @issue.longitude != 0 %>
-<div id="mapdiv" style="height:500px; width: 500px;"></div>
-
-<script>
-    map = new OpenLayers.Map("mapdiv");
-    map.addLayer(new OpenLayers.Layer.OSM());
-    //-34.878842,-56.076877
-    var lonLat = new OpenLayers.LonLat( <%= @issue.longitude %>, <%= @issue.latitude %> )
-          .transform(
-            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
-            map.getProjectionObject() // to Spherical Mercator Projection
-          );
- 
-    var zoom=16;
- 
-    var markers = new OpenLayers.Layer.Markers( "Markers" );
-    map.addLayer(markers);
- 
-    markers.addMarker(new OpenLayers.Marker(lonLat));
- 
-    map.setCenter (lonLat, zoom);
-</script>
-<% end %>
-
-<h3>Foto</h3>
-
-<% if @issue.image_url%>
-<img src="<%= @issue.image_url %>"/>
-<% end %>
-
-<div class="issue-fix-panel">
-  <%= link_to "fix", fix_issue_path(@issue) %>
-  <%= link_to "unfix", unfix_issue_path(@issue) %>
-  <p>
-    <%= "Ranking: #{@issue.fixed}" %>
+  <h1>Reporte #<%= @issue.id %></h1>
+  <p><strong>Detalle</strong>:
+    <blockquote><%= @issue.text %> | <%= render_cell :tweets, :issue_tweet, tweet_id: @issue.tweet_id %></blockquote>
   </p>
-</div>
+  <i class="icon-thumbs-up"></i> Relevancia: <%= @issue.relevance %>
+  <%= render "map" %>
+  
+  <% unless @issue.image_url.empty? %>
+    <h3>Foto</h3>
+    <img src="<%= @issue.image_url %>"/>
+  <% end %>
 
-add more info
-reteew
-reply
+  <div class="issue-fix-panel">
+     <span class="badge badge-success">
+       <%= link_to "+", fix_issue_path(@issue) %>
+     </span>
+     <span class="badge badge-important">
+       <%= link_to "-", unfix_issue_path(@issue) %>
+     </span>
+    <p>
+      <%= "Puntaje arreglado: #{@issue.fixed}" %>
+    </p>
+  </div>
+
+  <div class="btn-group">
+    <button class="btn">Agregar información</button>
+    <button class="btn">Responder en Twitter</button>
+    <button class="btn">Hacer RT</button>
+  </div>
+
 </div>
