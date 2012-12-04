@@ -4,16 +4,28 @@ class IssuesController < ApplicationController
 
   def create
     issue = Issue.create(params["issue"])
-    render json: issue
+    respond_to do |format|
+      format.html
+      format.json { render json: issue }
+    end
   end
 
   def show
     @issue = Issue.find(params["id"])
-    render
+    respond_to do |format|
+      format.html
+      format.json { render json: @issue }
+    end
   end
 
   def index
-    render json: Issue.order(:relevance).limit(20)
+    @issues = Issue.order(:relevance).page(params[:page]).per(20)
+    respond_to do |format|
+      format.html
+      format.json{
+        render json: @issues
+      }
+    end
   end
 
   def edit
@@ -21,7 +33,10 @@ class IssuesController < ApplicationController
 
   def update
     issue = Issue.update_attributes(params["issue"])
-    render json: issue
+    respond_to do |format|
+      format.html
+      format.json { render json: issue }
+    end
   end
 
   def destroy

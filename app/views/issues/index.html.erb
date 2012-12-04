@@ -1,0 +1,7 @@
+<% unless @issues.empty? %>
+  <%= paginate @issues %>
+  <% @issues.each do |issue| %>
+    <li><%= issue.text %></li>
+  <% end %>
+  <%= paginate @issues %>
+<% end %>

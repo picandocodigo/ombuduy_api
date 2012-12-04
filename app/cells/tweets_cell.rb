@@ -1,8 +1,11 @@
 class TweetsCell < Cell::Rails
 
   def issue_tweet(args)
-    @tweet = Twitter.status(args[:tweet_id])
-    render
+    begin
+      @tweet = Twitter.status(args[:tweet_id])
+      render
+    rescue Exception
+    end
   end
 
 end

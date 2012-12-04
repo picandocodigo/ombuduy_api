@@ -1,7 +1,10 @@
 <div>
   <h1>Reporte #<%= @issue.id %></h1>
   <p><strong>Detalle</strong>:
-    <blockquote><%= @issue.text %> | <%= render_cell :tweets, :issue_tweet, tweet_id: @issue.tweet_id %></blockquote>
+    <blockquote>
+      <%= @issue.text %> | 
+      <%= render_cell :tweets, :issue_tweet, tweet_id: @issue.tweet_id %>
+    </blockquote>
   </p>
   <i class="icon-thumbs-up"></i> Relevancia: <%= @issue.relevance %>
   <%= render "map" %>
