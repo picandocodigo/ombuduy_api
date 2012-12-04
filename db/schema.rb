@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20121203173356) do
 
   create_table "issues", :force => true do |t|
-    t.integer  "relevance"
+    t.integer  "relevance",       :default => 0
     t.string   "address"
     t.decimal  "latitude"
     t.decimal  "longitude"
@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(:version => 20121203173356) do
     t.integer  "user_id"
     t.string   "twitter_user_id"
     t.string   "tweet_id"
-    t.integer  "fixed"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.integer  "fixed",           :default => 0
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "issues_tags", :force => true do |t|
