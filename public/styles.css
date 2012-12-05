@@ -122,7 +122,7 @@ footer {
 }
 #logo {
   display: block;
-  width: 200px;
+  width: 105px;
   margin: auto;
   line-height: 30px;
   text-align: center;
@@ -131,6 +131,12 @@ footer {
   text-shadow: #606060;
   font-size: 17px;
   outline: none;
+}
+#logo span {
+  float: left;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
 }
 header nav {
   float: right;
