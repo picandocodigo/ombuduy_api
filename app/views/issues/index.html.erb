@@ -1,7 +1,7 @@
 <% unless @issues.empty? %>
   <%= paginate @issues %>
   <% @issues.each do |issue| %>
-    <li><%= issue.text %></li>
+    <li><%= link_to issue.text, issue_path(issue) %></li>
   <% end %>
   <%= paginate @issues %>
 <% end %>
