@@ -33,8 +33,9 @@
   </div>
 
   <% unless @issue.replies.empty? %>
+    <h3>Respuestas:</h3>
     <ul>
-    <% @issues.replies.each do |reply| %>
+    <% @issue.replies.each do |reply| %>
       <li><%= reply.text %></li>
     <% end %>
     </ul>

@@ -35,7 +35,6 @@ class TwitterController < ApplicationController
                         issue_id: issue.id,
                         text: params["message"],
                         tweet_id: params["tweet_id"],
-                        reply_to_id: params["reply_to_id"],
                         user_id: params["user_id"],
                         image_url: params["image_url"]
                         )
