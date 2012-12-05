@@ -12,7 +12,7 @@
       this.activity.url = 'sisis';
 
       this.pictures = new Ombuds.Collections.IssuePictures();
-      this.pictures.url = 'sisis';
+      this.pictures.url = '/issues/' + this.id + '/pictures';
     }
   
   });

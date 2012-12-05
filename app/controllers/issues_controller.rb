@@ -47,6 +47,15 @@ class IssuesController < ApplicationController
   def replies
     render json: Issue.find(params[:id]).replies
   end
+  
+  def pictures
+    pictures = []
+    picture = Issue.find(params[:id]).image_url
+    unless picture.nil?
+      pictures << {image_url: picture}
+    end
+    render json: pictures
+  end
 
   def fix
     # TODO clean variables, control save action

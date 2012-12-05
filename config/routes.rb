@@ -8,6 +8,7 @@ OmbuduyApi::Application.routes.draw do
     end
     member do
       get :replies
+      get :pictures
       get 'fix'
       get 'unfix'
     end
