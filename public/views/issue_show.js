@@ -58,10 +58,10 @@
     showReplies: function () {
       this.$el
         .find('.tabs .tab-content').hide()
-        .filter('#issue_map_frame').show();
+        .filter('.replies').show();
       this.$el
         .find('.tab-buttons a').removeClass('active')
-        .filter('[rel=map]').addClass('active');
+        .filter('[rel=replies]').addClass('active');
       this.repliesView.fetch();
     },
 
@@ -86,23 +86,29 @@
     },
 
     showMap: function () {
-      map = new OpenLayers.Map("issue_map_frame");
-      map.addLayer(new OpenLayers.Layer.OSM());
-      //-34.878842,-56.076877
-      var lonLat = new OpenLayers.LonLat(this.model.get('longitude'), this.model.get('latitude'))
+      if (!!this.model.get('longitude') && !!this.model.get('latitude') && !this.renderedMap) {
+        try {
+        map = new OpenLayers.Map("issue_map_frame");
+        map.addLayer(new OpenLayers.Layer.OSM());
+        //-34.878842,-56.076877
+        var lonLat = new OpenLayers.LonLat(this.model.get('longitude'), this.model.get('latitude'))
             .transform(
               new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
               map.getProjectionObject() // to Spherical Mercator Projection
             );
 
-      var zoom=16;
+        var zoom=16;
 
-      var markers = new OpenLayers.Layer.Markers( "Markers" );
-      map.addLayer(markers);
+        var markers = new OpenLayers.Layer.Markers( "Markers" );
+        map.addLayer(markers);
 
-      markers.addMarker(new OpenLayers.Marker(lonLat));
+        markers.addMarker(new OpenLayers.Marker(lonLat));
 
-      map.setCenter (lonLat, zoom);
+        map.setCenter (lonLat, zoom);
+
+        this.renderedMap = true;
+        } catch(e) {} // TODO: Remove map
+      }
 
       this.$el
         .find('.tabs .tab-content').hide()

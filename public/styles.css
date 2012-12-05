@@ -339,7 +339,7 @@ header nav li a {
   border: 1px solid #c0c0c0;
   padding: 10px;
 }
-#issue-show .replies .no-results {
+#issue-show .tab-content .no-results {
   font-size: 13px;
   font-style: italic;
   color: #909090;

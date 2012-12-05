@@ -27,7 +27,11 @@
   <div class="pictures tab-content">
   </div>
   <div class="map tab-content">
+    <% if (!!issue.get('longitude') && !!issue.get('latitude')) { %>
     <div id="issue_map_frame">
     </div> 
+    <% } else { %>
+    <p class="no-results">No hay mapa para mostrar</p>
+    <% } %>
   </div>
 </div>
