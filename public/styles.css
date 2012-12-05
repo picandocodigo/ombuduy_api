@@ -447,6 +447,11 @@ header nav li a {
 #issue-list ul {
   background: #fff;
 }
+#issue-list.loading ul {
+  background-image: url(images/spinner.gif);
+  background-position: right top;
+  background-repeat: no-repeat;
+}
 #issue-show.loading * {
   display: none;
 }
