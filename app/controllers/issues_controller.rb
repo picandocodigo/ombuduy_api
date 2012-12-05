@@ -57,6 +57,17 @@ class IssuesController < ApplicationController
     render json: pictures
   end
 
+  def activity
+    issue = Issue.find(params[:id])
+    activity = []
+    activity << {
+      author: 'banafederico',
+      action: 'creo el reporte',
+      date: issue.created_at
+    }
+    render json: activity
+  end
+
   def fix
     # TODO clean variables, control save action
     issue = Issue.find(params["id"])

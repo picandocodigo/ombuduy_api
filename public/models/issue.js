@@ -9,7 +9,7 @@
       this.replies.url = '/issues/' + this.id + '/replies';
 
       this.activity = new Ombuds.Collections.IssueActivity();
-      this.activity.url = 'sisis';
+      this.activity.url = '/issues/' + this.id + '/activity';
 
       this.pictures = new Ombuds.Collections.IssuePictures();
       this.pictures.url = '/issues/' + this.id + '/pictures';
