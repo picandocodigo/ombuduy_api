@@ -23,7 +23,7 @@
         success: function () {
           that.render();
           that.$el.removeClass(loading);
-          clearTimeour(that.timeoutId);
+          clearTimeout(that.timeoutId);
           that.timeoutId = setTimeout(that.fetch, 5000);
         }
       });
