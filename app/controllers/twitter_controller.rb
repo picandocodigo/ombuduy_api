@@ -15,8 +15,8 @@ class TwitterController < ApplicationController
 
     unless params["hastags"].nil?
       params["hashtags"].each do |hashtag|
-        if (tag = Tag.where(title: tag).first).nil?
-          tag = Tag.create(title: tag)
+        if (tag = Tag.where(title: hashtag[:title]).first).nil?
+          tag = Tag.create(title: hashtag[:title])
         end
         issue.add_tag(tag) unless tag.title =~ /ombuduy/i
       end
