@@ -18,12 +18,12 @@ class TwitterController < ApplicationController
         if (tag = Tag.where(title: tag).first).nil?
           tag = Tag.create(title: tag)
         end
-        issue.add_tag(tag)
+        issue.add_tag(tag) unless tag.title =~ /ombuduy/i
       end
     end
 
     if issue.save
-      render json: "/issues/#{issue.id}", status: 201
+      render json: "/reportes/#{issue.id}", status: 201
     else
       render text: "Error", status: 400
     end
