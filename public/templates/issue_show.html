@@ -4,7 +4,7 @@
 <div class="info">
   <p class="tags"><% _.each(issue.get('tags'), function (tag, i) { %><%= tag %><% if (i !== issue.get('tags').length - 1) { %>, <% } %><% }) %></p>
   <p class="date"><%= issue.get('created_at') %></p>
-  <p class="author"><a href="">banafederico</a></p>
+  <p class="author"><a href=""><%= issue.get('author') %></a></p>
   <p class="relevance">
     <span>+ <%= issue.get('relevance') %></span>
     <a class="plus" href="">+1</a>

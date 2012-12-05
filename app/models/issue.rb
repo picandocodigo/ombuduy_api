@@ -5,4 +5,22 @@ class Issue < ActiveRecord::Base
   has_many :replies
 
   has_one :user
+
+  def as_json(options)
+    json = {}
+    json[:id] = self.id
+    json[:text] = self.text
+    json[:author] = random_author
+    json[:created_at] = self.created_at
+    json[:relevance] = self.relevance
+    json
+  end
+
+  private
+
+  def random_author
+    authors = ['banafederico', 'picandocodigo', 'martinloy', 'diegodiaz', 'franciscovillegas']
+    authors[Random.rand(5).to_i]
+  end
+
 end
