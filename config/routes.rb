@@ -7,6 +7,7 @@ OmbuduyApi::Application.routes.draw do
       get :hot
     end
     member do
+      get :replies
       get 'fix'
       get 'unfix'
     end

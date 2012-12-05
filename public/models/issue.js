@@ -6,7 +6,7 @@
 
     initialize: function () {
       this.replies = new Ombuds.Collections.IssueReplies();
-      this.replies.url = 'sisisi';
+      this.replies.url = '/issues/' + this.id + '/replies';
 
       this.activity = new Ombuds.Collections.IssueActivity();
       this.activity.url = 'sisis';

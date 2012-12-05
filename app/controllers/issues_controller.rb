@@ -44,6 +44,10 @@ class IssuesController < ApplicationController
     render status: 405
   end
 
+  def replies
+    render json: Issue.find(params[:id]).replies
+  end
+
   def fix
     # TODO clean variables, control save action
     issue = Issue.find(params["id"])
