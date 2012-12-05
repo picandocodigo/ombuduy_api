@@ -1,0 +1,6 @@
+<aside>
+  <h1>Categorias</h1>
+  <p><% _.each(tags, function(tag, i) { %>
+  <a href="#/categorias/<%= tag.get('id') %>"><%= tag.get('name') %></a><% if (i !== tags.length-1) { %>,<% } %> 
+  <% }); %></p>
+</aside>

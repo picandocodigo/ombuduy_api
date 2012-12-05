@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OmbudsUy</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <header class="full">
+      <div class="center">
+        <a href="#" id="logo">Ombuds</a>
+      </div>
+    </header>
+
+    <div class="full">
+      <div class="center">
+
+        <div id="sidebar">
+          <div id="user_profile" class="box">
+            <aside>
+              <h1>Bienvenido Invitado!</h1>
+              <p>Para poder participar en Ombud es necesario que te registres.</p>
+              <a class="button" href="">Registrate</a>
+              <p class="small">Si ya ten&eacute;s cuenta, hac&eacute; <a href="">clic ac&aacute;</a></p>
+            </aside>
+          </div>
+          <div id="tag-list" class="box"></div>
+          <div id="mark" class="box">
+            <aside>
+              <img src="images/ciudad.jpg" width="120" />
+              <h1>Hagamos de nuestra ciudad un lugar mejor</h1>
+              <p>Ombuds es la herramienta que te va a ayudar a que vos, con tu aporte, puedas ayudar a mejorar tu ciudad.</p>
+              <p>Si encontr&aacute;s algo roto, apunto de romperse, o algo que simplemente te parece que necesita que se le de atenci&oacute;n, subilo y vamos a hacer lo imposible por hacer llegar tu opinion a quien corresponda.</p>
+            </side>
+          </div>
+        </div>
+        <div id="content">
+
+          <div class="intro">
+            <h1>Ombud</h1>
+            <img src="images/logo.png" />
+            <p>Ombud es un sistema que actúa como Ombudsman entre tú y los entes estatales encargados de cuidar tu ciudad. Te ayuda a informarlos de problemas como calles en mal estado, basura, alumbrado público dañado o situaciones peligrosas en tu barrio.</p>
+            <p>La idea es catalogar la información y hacer llegar los reportes de incidentes a las entidades o personas que puedan darle una solución. Los datos generados son abiertos y usamos la tecnología de datos abiertos de OpenStreetMap para proveer geolocalización a la información.</p>
+          </div>
+
+          <div id="hot-issue-list"></div>
+          <div id="issue-list"></div>
+          <div id="issue-show"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="full">
+      <div class="center">
+        <p>&copy; OmbudsUy - NaN</p>
+      </div>
+    </footer>
+
+    <script>
+      Ombuds = {};
+      Ombuds.Models = {};
+      Ombuds.Collections = {};
+      Ombuds.Views = {};
+      Ombuds.Routers = {};
+    </script>
+
+    <script src="libraries/jquery.js"></script>
+    <script src="libraries/underscore.js"></script>
+    <script src="libraries/backbone.js"></script>
+
+    <script src="helpers/application_helper.js"></script>
+
+    <script src="models/issue.js"></script>
+    <script src="models/issue_reply.js"></script>
+    <script src="models/issue_activity.js"></script>
+    <script src="models/issue_picture.js"></script>
+    <script src="models/tag.js"></script>
+    <script src="collections/issues.js"></script>
+    <script src="collections/tags.js"></script>
+    <script src="collections/hot_issues.js"></script>
+    <script src="collections/issue_replies.js"></script>
+    <script src="collections/issue_activity.js"></script>
+    <script src="collections/issue_pictures.js"></script>
+
+    <script src="views/issue_list.js"></script>
+    <script src="views/issue_show.js"></script>
+    <script src="views/issue_show_replies.js"></script>
+    <script src="views/issue_show_activity.js"></script>
+    <script src="views/issue_show_pictures.js"></script>
+    <script src="views/tag_list.js"></script>
+    <script src="views/hot_issue_list.js"></script>
+    <script src="views/main.js"></script>
+
+    <script src="routers/issues_router.js"></script>
+
+    <script>
+      new Ombuds.Routers.IssuesRouter();
+      Backbone.history.start();
+    </script>
+
+  </body>
+</html>

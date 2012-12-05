@@ -1,0 +1,11 @@
+<ul>
+  <% _.each(replies, function (reply) { %>
+  <li>
+    <h3><%= reply.get('content') %></h3>
+    <div class="info">
+      <p class="date"><%= reply.get('date') %></p>
+      <p class="author">Reportado por <a href="#"><%= reply.get('author') %></a></p>
+    </div>
+  </li>
+  <% }) %>
+</ul>

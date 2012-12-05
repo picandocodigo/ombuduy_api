@@ -1,0 +1,27 @@
+<h1><%= issue.get('title') %></h1>
+
+<div class="info">
+  <p class="tags"><% _.each(issue.get('tags'), function (tag, i) { %><%= tag %><% if (i !== issue.get('tags').length - 1) { %>, <% } %><% }) %></p>
+  <p class="date"><%= issue.get('date') %></p>
+  <p class="author"><a href="">banafederico</a></p>
+  <p class="relevance">
+    <span>+ <%= issue.get('relevance') %></span>
+    <a class="plus" href="">+1</a>
+    <a class="minus" href="">-1</a>
+  </p>
+</div>
+
+
+<div class="tabs">
+  <ul class="tab-buttons">
+    <li><a rel="replies" href="javascript:void(0)">Respuestas</a></li>
+    <li><a rel="activity" href="javascript:void(0)">Actividad</a></li>
+    <li><a rel="pictures" href="javascript:void(0)">Fotos</a></li>
+  </ul>
+  <div class="replies tab-content">
+  </div>
+  <div class="activity tab-content">
+  </div>
+  <div class="pictures tab-content">
+  </div>
+</div>

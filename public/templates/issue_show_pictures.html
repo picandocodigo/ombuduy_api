@@ -1,0 +1,6 @@
+<ul>
+  <% _.each(pictures, function (picture) { %>
+  <li><img alt="Subida por <%= picture.get('author') %>" src="<%= picture.get('image_url') %>" width="320" /></li>
+  <% }) %>
+</ul>
+<div class="clear"></div>

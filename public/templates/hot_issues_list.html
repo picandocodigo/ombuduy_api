@@ -1,0 +1,15 @@
+<aside>
+  <h1>Destacados</h1>
+  <ul>
+    <% _.each(issues, function (issue) { %>
+    <li>
+      <h2><a href="#/reportes/<%= issue.get('id') %>"><%= issue.get('title') %></a></h2>
+      <div class="info">
+        <p class="date"><%= issue.get('date') %></p>
+        <p class="relevance">+ <%= issue.get('relevance') %></p>
+        <p class="author">Reportado por <a href="">banafederico</a></p>
+      </div>
+    </li>
+    <% }) %>
+  </ul>
+</aside>
