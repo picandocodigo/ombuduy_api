@@ -1,5 +1,8 @@
 <h1><%= issue.get('text') %></h1>
 
+<div id="issue_map_frame">
+</div>
+
 <div class="info">
   <p class="tags"><% _.each(issue.get('tags'), function (tag, i) { %><%= tag %><% if (i !== issue.get('tags').length - 1) { %>, <% } %><% }) %></p>
   <p class="date"><%= issue.get('created_at') %></p>
