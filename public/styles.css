@@ -298,6 +298,7 @@ header nav li a {
   height: 16px;
   margin-left: 5px;
   margin-top: 7px;
+  outline: none;
 }
 #issue-show .info p.relevance a.plus {
   background: url(images/plus.png);

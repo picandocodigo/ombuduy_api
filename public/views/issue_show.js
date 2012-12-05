@@ -7,7 +7,9 @@
     events: {
       'click .tabs a[rel=replies]': 'showReplies',
       'click .tabs a[rel=activity]': 'showActivity',
-      'click .tabs a[rel=pictures]': 'showPictures'
+      'click .tabs a[rel=pictures]': 'showPictures',
+      'click a.plus': 'addOne',
+      'click a.minus': 'substractOne'
     },
 
     initialize: function () {
@@ -80,6 +82,40 @@
         .find('.tab-buttons a').removeClass('active')
         .filter('[rel=pictures]').addClass('active');
       this.picturesView.fetch();        
+    },
+
+    addOne: function () {
+      var relevance = parseInt(this.model.get('relevance'), 10) + 1
+        , relElem = this.$el.find('.relevance span');
+
+      this.model.save(
+        {
+          relevance: relevance
+        },
+        {
+          success: function () {
+            relElem.html('+ ' + relevance);
+          }
+        }
+      );
+      return false;
+    },
+
+    substractOne: function () {
+      var relevance = parseInt(this.model.get('relevance'), 10) - 1
+        , relElem = this.$el.find('.relevance span');
+
+      this.model.save(
+        {
+          relevance: relevance
+        },
+        {
+          success: function () {
+            relElem.html('+ ' + relevance);
+          }
+        }
+      );
+      return false;
     }
 
   });

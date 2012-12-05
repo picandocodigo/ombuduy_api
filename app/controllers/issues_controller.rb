@@ -32,7 +32,7 @@ class IssuesController < ApplicationController
   end
 
   def update
-    issue = Issue.update_attributes(params["issue"])
+    issue = Issue.find(params[:id]).update_attributes(params["issue"])
     respond_to do |format|
       format.html
       format.json { render json: issue }
