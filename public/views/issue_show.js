@@ -8,6 +8,7 @@
       'click .tabs a[rel=replies]': 'showReplies',
       'click .tabs a[rel=activity]': 'showActivity',
       'click .tabs a[rel=pictures]': 'showPictures',
+      'click .tabs a[rel=map]': 'showMap',
       'click a.plus': 'addOne',
       'click a.minus': 'substractOne'
     },
@@ -38,7 +39,6 @@
           });
 
           that.showMap();
-          that.showReplies();
       });
     },
 
@@ -58,10 +58,10 @@
     showReplies: function () {
       this.$el
         .find('.tabs .tab-content').hide()
-        .filter('.replies').show();
+        .filter('#issue_map_frame').show();
       this.$el
         .find('.tab-buttons a').removeClass('active')
-        .filter('[rel=replies]').addClass('active');
+        .filter('[rel=map]').addClass('active');
       this.repliesView.fetch();
     },
 
@@ -86,7 +86,7 @@
     },
 
     showMap: function () {
-      map = new OpenLayers.Map("mapdiv");
+      map = new OpenLayers.Map("issue_map_frame");
       map.addLayer(new OpenLayers.Layer.OSM());
       //-34.878842,-56.076877
       var lonLat = new OpenLayers.LonLat(this.model.get('longitude'), this.model.get('latitude'))
@@ -103,6 +103,15 @@
       markers.addMarker(new OpenLayers.Marker(lonLat));
 
       map.setCenter (lonLat, zoom);
+
+      this.$el
+        .find('.tabs .tab-content').hide()
+        .filter('.map').show();
+      this.$el
+        .find('.tab-buttons a').removeClass('active')
+        .filter('[rel=map]').addClass('active');
+     
+      
     },
 
     addOne: function () {

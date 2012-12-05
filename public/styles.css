@@ -487,3 +487,8 @@ header nav li a {
   padding-left: 0;
   background: 0;
 }
+
+#issue_map_frame {
+  margin: 15px;
+  height: 200px;
+}

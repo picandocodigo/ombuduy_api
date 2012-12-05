@@ -1,7 +1,5 @@
 <h1><%= issue.get('text') %></h1>
 
-<div id="issue_map_frame">
-</div>
 
 <div class="info">
   <p class="tags"><% _.each(issue.get('tags'), function (tag, i) { %><%= tag %><% if (i !== issue.get('tags').length - 1) { %>, <% } %><% }) %></p>
@@ -20,11 +18,16 @@
     <li><a rel="replies" href="javascript:void(0)">Respuestas</a></li>
     <li><a rel="activity" href="javascript:void(0)">Actividad</a></li>
     <li><a rel="pictures" href="javascript:void(0)">Fotos</a></li>
+    <li><a rel="map" href="javascript:void(0)">Mapa</a></li>
   </ul>
   <div class="replies tab-content">
   </div>
   <div class="activity tab-content">
   </div>
   <div class="pictures tab-content">
+  </div>
+  <div class="map tab-content">
+    <div id="issue_map_frame">
+    </div> 
   </div>
 </div>
