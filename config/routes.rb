@@ -3,6 +3,9 @@ OmbuduyApi::Application.routes.draw do
   root :to => 'home#index'
 
   resources :issues do
+    collection do
+      get :hot
+    end
     member do
       get 'fix'
       get 'unfix'

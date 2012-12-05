@@ -19,7 +19,7 @@ class IssuesController < ApplicationController
   end
 
   def index
-    @issues = Issue.order(:relevance).page(params[:page]).per(20)
+    @issues = Issue.order('created_at DESC').page(params[:page]).per(20)
     respond_to do |format|
       format.html
       format.json{
@@ -57,6 +57,10 @@ class IssuesController < ApplicationController
     issue.fixed -= 1
     issue.save
     redirect_to issue
+  end
+
+  def hot
+    render json: Issue.order('relevance DESC').limit(2)
   end
 
 end
