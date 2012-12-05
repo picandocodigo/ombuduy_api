@@ -8,7 +8,12 @@ OmbuduyApi::Application.routes.draw do
       get 'unfix'
     end
   end
-  resources :tags
+
+  resources :tags do
+    member do
+      get :issues
+    end
+  end
 
   post 'twitter/new' => 'twitter#new'
   post 'twitter/reply' => 'twitter#reply'

@@ -428,7 +428,7 @@ header nav li a {
 
 #issue-show.loading,
 #issue-list.loading {
-  min-height: 100px;
+  min-height: 30px;
   background-image: url(images/spinner.gif);
   background-position: center center;
   background-repeat: no-repeat;
