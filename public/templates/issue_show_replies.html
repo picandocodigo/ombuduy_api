@@ -1,3 +1,4 @@
+<% if (replies.length !== 0) { %>
 <ul>
   <% _.each(replies, function (reply) { %>
   <li>
@@ -9,3 +10,6 @@
   </li>
   <% }) %>
 </ul>
+<% } else { %>
+<p class="no-results">No hay ninguna respuesta</p>
+<% } %>

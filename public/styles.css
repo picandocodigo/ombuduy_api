@@ -332,6 +332,11 @@ header nav li a {
   border: 1px solid #c0c0c0;
   padding: 10px;
 }
+#issue-show .replies .no-results {
+  font-size: 13px;
+  font-style: italic;
+  color: #909090;
+}
 #issue-show .replies li {
   list-style: none;
   padding: 10px 0;

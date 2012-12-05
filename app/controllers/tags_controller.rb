@@ -5,7 +5,7 @@ class TagsController < ApplicationController
   end
 
   def issues
-    render :json => Tag.find(params[:id]).issues
+    render :json => Tag.find(params[:id]).issues.order('created_at DESC')
   end
 
 end
