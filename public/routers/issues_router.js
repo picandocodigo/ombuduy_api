@@ -22,7 +22,7 @@
     },
 
     issueShow: function (issue_id) {
-      this.mainView.showIssue(new Ombuds.Models.Issue({ id: issue_id, title: 'Este es un issue muy importante... Que buena que esta la ORT, mucho estudio, la cantida esta D+ me encanta...', address: 'Colonia y Mercedes', tags: ['OSE', 'UTE'], relevance: 12, date: '22 de Junio de 1990'}));
+      this.mainView.showIssue(new Ombuds.Models.Issue({ id: issue_id }));
     },
 
     tagShow: function (id) {

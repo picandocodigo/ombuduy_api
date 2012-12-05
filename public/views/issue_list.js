@@ -5,7 +5,7 @@
     template: 'templates/issue_list.html',
 
     initialize: function () {
-      _.bindAll(this, 'render');
+      _.bindAll(this, 'render', 'fetch');
     },
 
     render: function () {
@@ -23,6 +23,7 @@
         success: function () {
           that.render();
           that.$el.removeClass(loading);
+          setTimeout(that.fetch, 5000);
         }
       });
     }

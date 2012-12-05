@@ -2,7 +2,7 @@
 
   Ombuds.Models.Issue = Backbone.Model.extend({
     
-    url: '/tuhermana_issue',
+    urlRoot: '/issues/',
 
     initialize: function () {
       this.replies = new Ombuds.Collections.IssueReplies();
@@ -13,11 +13,7 @@
 
       this.pictures = new Ombuds.Collections.IssuePictures();
       this.pictures.url = 'sisis';
-    },
-
-  fetch: function (options) {
-           setTimeout(options.success, 1000);
-         }
+    }
   
   });
 
