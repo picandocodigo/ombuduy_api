@@ -355,16 +355,23 @@ header .add:hover {
 }
 #issue_show_pictures ul {
   float: left;
-  width: 100%;
+  width: 204px;
+  max-height: 214px;
+  padding: 10px 10px 0;
+  overflow: auto;
 }
 #issue_show_pictures li {
   float: left;
-  width: 120px;
-  height: 120px;
+  width: 95px;
+  height: 95px;
   overflow: hidden;
+  margin-bottom: 10px;
   margin-right: 10px;
   border: 1px solid #e0e0e0;
   text-align: center;
+}
+#issue_show_pictures li:nth-child(2n) {
+  margin-right: 0;
 }
 #issue_show_pictures img {
   font-size: 13px;

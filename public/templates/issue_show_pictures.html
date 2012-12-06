@@ -2,7 +2,7 @@
 <% if (pictures.length !== 0) { %>
 <ul>
   <% _.each(pictures, function (picture) { %>
-  <li><a href="<%= picture.get('image_url') %>" target="_blank"><img alt="Subida por <%= picture.get('author') %>" src="<%= picture.get('image_url') %>" width="320" /></a></li>
+  <li><a href="<%= picture.get('image_url') %>" target="_blank"><img alt="Subida por <%= picture.get('author') %>" src="<%= picture.get('image_url') %>" width="120" /></a></li>
   <% }) %>
 </ul>
 <div class="clear"></div>
