@@ -8,6 +8,7 @@ class Issue < ActiveRecord::Base
 
   def as_json(options)
     json = {}
+    json[:tags] = self.tags.map { |t| t.name }
     json[:id] = self.id
     json[:text] = self.text
     json[:author] = random_author

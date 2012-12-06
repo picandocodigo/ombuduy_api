@@ -215,12 +215,13 @@ header .add:hover {
   border-bottom: 1px dotted #e0e0e0;
 }
 #issue-show .info {
-  height: 70px;
+  height: 85px;
 }
 #issue-show .info p {
   font-size: 13px;
   color: #707070;
   margin-right: 20px;
+  margin-bottom: 3px;
   line-height: 20px;
 }
 #issue-show .info p a {
@@ -236,7 +237,7 @@ header .add:hover {
   margin-right: 5px;
   font-style: italic;
   font-weight: bold;
-  font-size: 17px;
+  font-size: 18px;
   color: #66f;
   text-shadow: 1px 1px 0 #fff;
 }
@@ -247,12 +248,26 @@ header .add:hover {
   height: 16px;
   margin-left: 5px;
   outline: none;
+  margin-top: 2px;
 }
 #issue-show .info p.relevance a.plus {
   background: url(images/plus.png);
 }
 #issue-show .info p.relevance a.minus {
   background: url(images/minus.png);
+}
+
+#issue-show .info p.tags {
+  padding-left: 22px;
+  background: url(images/tag.png) no-repeat left 3px;
+}
+#issue-show .info p.date {
+  padding-left: 22px;
+  background: url(images/clock.png) no-repeat left center;
+}
+#issue-show .info p.author {
+  padding-left: 22px;
+  background: url(images/user.png) no-repeat left 3px;
 }
 
 #issue-show .box {
@@ -441,18 +456,6 @@ header .add:hover {
   overflow: hidden;
 }
 
-#issue-show .info p.tags {
-  padding-left: 22px;
-  background: url(images/tag.png) no-repeat left center;
-}
-#issue-show .info p.date {
-  padding-left: 22px;
-  background: url(images/clock.png) no-repeat left center;
-}
-#issue-show .info p.author {
-  padding-left: 22px;
-  background: url(images/user.png) no-repeat left center;
-}
 #issue-show .replies p.date,
 #issue-show .replies p.author {
   padding-left: 0;
