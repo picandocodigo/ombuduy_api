@@ -238,6 +238,7 @@ header .add:hover {
   font-style: italic;
   font-weight: bold;
   font-size: 18px;
+  line-height: 16px;
   color: #66f;
   text-shadow: 1px 1px 0 #fff;
 }
@@ -248,7 +249,6 @@ header .add:hover {
   height: 16px;
   margin-left: 5px;
   outline: none;
-  margin-top: 2px;
 }
 #issue-show .info p.relevance a.plus {
   background: url(images/plus.png);
