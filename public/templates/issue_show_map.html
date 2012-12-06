@@ -1,0 +1,6 @@
+<h3>Mapa</h3>
+<% if (!!issue.get('longitude') && !!issue.get('latitude')) { %>
+<div id="issue_show_map_frame"></div>
+<% } else { %>
+<p class="no-results">No hay mapa para mostrar</p>
+<% } %>

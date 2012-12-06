@@ -25,7 +25,7 @@
         success: function () {
           that.render();
           that.$el.removeClass(loading);
-          setTimeout(that.fetch, 5000);
+          setTimeout(that.fetch, 20000);
         }
       });
     }

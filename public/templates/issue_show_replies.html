@@ -1,8 +1,9 @@
+<h3>Respuestas</h3>
 <% if (replies.length !== 0) { %>
 <ul>
   <% _.each(replies, function (reply) { %>
   <li>
-    <h3><%= reply.get('text') %></h3>
+    <h4><%= reply.get('text') %></h4>
     <div class="info">
       <p class="date"><%= reply.get('created_at') %></p>
       <p class="author">Reportado por <a href="#"><%= reply.get('author') %></a></p>

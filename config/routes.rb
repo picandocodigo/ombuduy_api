@@ -16,6 +16,9 @@ OmbuduyApi::Application.routes.draw do
   end
 
   resources :tags do
+    collection do
+      get :navigation
+    end
     member do
       get :issues
     end

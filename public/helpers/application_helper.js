@@ -11,18 +11,11 @@ $.loadTemplate = function (o, callback) {
 };
 
 $.renderTemplate = function (o, templateObject, callback) {
-  if (!o.rendered) {
-    $.loadTemplate(o, function (html) {
-      html = _.template(html, templateObject);
-      $(o.el).html(html);
-      if (typeof callback === 'function') {
-        callback();
-      }
-    });
-  }
-  else {
+  $.loadTemplate(o, function (html) {
+    html = _.template(html, templateObject);
+    $(o.el).html(html);
     if (typeof callback === 'function') {
       callback();
     }
-  }
+  });
 };

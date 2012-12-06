@@ -17,9 +17,10 @@
       });
     },
 
-    showIssueList: function (collection) {
+    showIssueList: function (title, collection) {
       this.issueShowView.$el.hide();
       this.issueListView.$el.show();
+      this.issueListView.title = title;
       this.issueListView.collection = collection;
       this.issueListView.fetch();
     },
@@ -32,10 +33,21 @@
     },
 
     showTag: function (tag) {
-      this.issueShowView.$el.hide();
-      this.issueListView.$el.show();
-      this.issueListView.collection = tag.issues;
-      this.issueListView.fetch();
+      var that = this;
+      that.issueShowView.$el.hide();
+      that.issueListView.$el.show();
+      that.issueListView.title = tag.name;
+      that.issueListView.collection = tag.issues;
+      that.issueListView.fetch(function () {
+        that.issueListView.setTitle('');
+        tag.fetch({
+          success: function () {
+            that.issueListView.setTitle(tag.get('name'));
+          }
+        });
+      });
+
+
     }
 
   });

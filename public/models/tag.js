@@ -2,7 +2,7 @@
 
   Ombuds.Models.Tag = Backbone.Model.extend({
   
-    url: '/tuhermana_tag',
+    urlRoot: '/tags',
 
     initialize: function () {
       this.issues = new Ombuds.Collections.Issues();

@@ -4,7 +4,7 @@
 }
 .center {
   margin: auto;
-  width: 900px;
+  width: 750px;
 }
 body {
   background: #ddf;
@@ -73,11 +73,11 @@ body {
   padding-bottom: 5px;
   background: url(images/tag.png) no-repeat right top;
 }
-#tag-list li {
-  list-style: none;
+#tag-list p {
+  color: #505050;
+  font-size: 13px;
 }
 #tag-list a {
-  font-size: 13px;
   color: #66f;
   line-height: 16px;
   text-decoration: none;
@@ -104,7 +104,7 @@ body {
 }
 #content {
   float: right;
-  width: 650px;
+  width: 500px;
 }
 header {
   margin-bottom: 20px;
@@ -138,132 +138,70 @@ footer {
   height: 30px;
   margin-right: 10px;
 }
-header nav {
-  float: right;
-}
-header nav li {
-  float: left;
-}
-header nav li a {
-  display: block;
-  padding: 0 10px;
-  font-size: 13px;
-  border: 1px solid #363636;
-  border-radius: 5px;
-  line-height: 30px;
-  margin-left: 10px;
-  color: #e0e0e0;
-}
-#content .intro {
-  margin-bottom: 20px;
-  border-bottom: 1px dotted #e0e0e0;
-  display: none;
-}
-#content .intro h1 {
-  padding-top: 5px;
-  font-size: 42px;
-  font-family: Montserrat Alternates, sans-serif;
-  margin-bottom: 15px;
-}
-#content .intro img {
-  float: right;
-  margin-left: 25px;
-  margin-bottom: 25px;
-}
-#content .intro p {
-  font-size: 15px;
-  color: #303030;
-  line-height: 20px;
-  margin-bottom: 15px;
-}
 
 #issue-list, 
-#hot-issue-list,
 #issue-show {
+  display: none;
   background: #fff;
   border: 1px solid #ccf;
   margin-bottom: 15px;
   padding: 15px;
   border-radius: 5px;
+  clear: both;
 }
-#hot-issue-list {
-  border: 1px solid #99f;
-  box-shadow: 0 1px 2px #aaf;
+#issue-list h1 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 15px;
 }
-#hot-issue-list h1 {
-  font-size: 17px;
-  color: #303030;
-  margin-bottom: 10px;
-}
-#issue-list li,
-#hot-issue-list li {
-  padding: 10px 0;
+#issue-list li {
+  padding: 10px 0 10px 22px;
   list-style: none;
   border-bottom: 1px dotted #e0e0e0;
+  background: url(images/user.png) no-repeat 0 12px;
 }
-#issue-list li:first-child,
-#hot-issue-list li:first-child {
-  padding-top: 0;
-}
-#issue-list li:last-child,
-#hot-issue-list li:last-child {
+#issue-list li:last-child {
   border-bottom: 0;
   padding-bottom: 0;
 }
-#issue-list h2,
-#hot-issue-list h2 {
+#issue-list h2 {
   font-size: 13px;
-  line-height: 18px;
+  line-height: 16px;
   font-weight: normal;
   margin-bottom: 3px;
 }
-#issue-list h2 a,
-#hot-issue-list h2 a {
+#issue-list h2 a {
   text-decoration: none;
   color: #303030;;
 }
-#issue-list .info,
-#hot-issue-list .info {
+#issue-list .info {
   height: 16px;
 }
-#issue-list .info p,
-#hot-issue-list .info p {
+#issue-list .info p {
   float: left;
   font-size: 11px;
   line-height: 16px;
   color: #909090;
   margin-right: 20px;
 }
-#issue-list .info p a,
-#hot-issue-list .info p a {
+#issue-list .info p.relevance {
+  font-weight: bold;
+  font-style: italic;
+}
+#issue-list .info p a {
   text-decoration: none;
   color: #66f;
 }
-#issue-list ul {
-  margin-bottom: 20px;
-}
-#issue-list a.view-more {
-  text-align: center;
-  display: block;
-  color: #fff;
-  background: #99f;
-  border-radius: 5px;
-  line-height: 30px;
-  text-decoration: none;
-  font-size: 13px;
-  text-shadow: 1px 1px 0 #66f;
-}
-#issue-list a.view-more:hover {
-  background: #aaf;
-}
 #issue-show h1 {
-  font-size: 21px;
-  line-height: 25px;
+  font-size: 15px;
+  line-height: 18px;
   color: #000;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #e0e0e0;
 }
 #issue-show .info {
-  height: 120px;
+  height: 70px;
 }
 #issue-show .info p {
   font-size: 13px;
@@ -276,20 +214,17 @@ header nav li a {
   color: #66f;
 }
 #issue-show .info p.relevance {
-  margin-top: 10px;
-  font-weight: bold;
-  font-size: 15px;
-  color: #66f;
-  text-shadow: 1px 1px 0 #fff;
+  float: right;
+  margin-right: 0;
 }
 #issue-show .info p.relevance span {
   float: left;
-  border: 1px solid #e0e0e0;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1), 0 0 2px rbga(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 5px 10px;
   margin-right: 5px;
   font-style: italic;
+  font-weight: bold;
+  font-size: 17px;
+  color: #66f;
+  text-shadow: 1px 1px 0 #fff;
 }
 #issue-show .info p.relevance a {
   float: left;
@@ -297,7 +232,6 @@ header nav li a {
   width: 16px;
   height: 16px;
   margin-left: 5px;
-  margin-top: 7px;
   outline: none;
 }
 #issue-show .info p.relevance a.plus {
@@ -306,94 +240,110 @@ header nav li a {
 #issue-show .info p.relevance a.minus {
   background: url(images/minus.png);
 }
-#issue-show .tabs ul.tab-buttons {
-  height: 30px;
-  margin-bottom: 1px;
+
+#issue-show .box {
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 15px;
 }
-#issue-show .tabs ul.tab-buttons li {
-  list-style: none;
-  float: left;
+#issue-show .box.loading {
+  min-height: 50px;
+  background: url(images/spinner.gif) no-repeat center center;
+}
+#issue-show .box h3 {
   font-size: 13px;
-  margin-right: 5px;
-}
-#issue-show .tabs ul.tab-buttons a {
-  display: block;
-  color: #999;
-  line-height: 30px;
+  color: #505050;
+  background: #f7f7f7;
+  border-bottom: 1px solid #e0e0e0;
   padding: 0 10px;
-  text-decoration: none;
-  border: solid #e0e0e0;
-  border-width: 1px 1px 0;
-  outline: 0;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  line-height: 20px;
+  text-shadow: 1px 1px 0 #fff;
 }
-#issue-show .tabs ul.tab-buttons a.active {
-  color: #44f;
-  border-color: #c0c0c0;
-  border-bottom: 1px solid #fff;
-  position: relative;
-  box-shadow: none;
-}
-#issue-show .tab-content {
-  border: 1px solid #c0c0c0;
+#issue-show .box p.no-results {
   padding: 10px;
-}
-#issue-show .tab-content .no-results {
   font-size: 13px;
   font-style: italic;
   color: #909090;
 }
-#issue-show .replies li {
+#issue_show_pictures,
+#issue_show_map {
+  width: 224px;
+  float: left;
+}
+#issue_show_pictures {
+  margin-right: 15px;
+}
+#issue_show_activity {
+  clear: both;
+}
+#issue-show_replies li {
   list-style: none;
   padding: 10px 0;
   border-bottom: 1px dotted #e0e0e0;
 }
-#issue-show .replies li:first-child {
+#issue-show_replies li:first-child {
   padding-top: 5px;
 }
-#issue-show .replies li:last-child {
+#issue-show_replies li:last-child {
   padding-bottom: 0;
   border-bottom: 0;
 }
-#issue-show .replies h3 {
+#issue_show_activity ul,
+#issue_show_replies ul {
+  padding: 10px;
+  list-style: none;
+}
+#issue_show_replies li {
+  padding: 10px 0;
+  border-bottom: 1px dotted #e0e0e0;
+}
+#issue_show_replies li:first-child {
+  padding-top: 0;
+}
+#issue_show_replies li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+#issue_show_replies h4 {
   font-size: 13px;
   line-height: 16px;
   color: #505050;
   font-weight: normal 
 }
-#issue-show .replies .info {
+#issue_show_replies .info {
   margin-bottom: 0;
   height: 20px;
 }
-#issue-show .replies .info p {
+#issue_show_replies .info p {
   float: left;
   font-size: 11px;
   color: #909090;
   width: auto;
+  padding-left: 0 !important;
+  background: 0 !important;
 }
-#issue-show .activity li {
+#issue_show_activity li {
   font-size: 13px;
   line-height: 16px;
   margin-bottom: 5px;
   list-style: none;
   color: #505050;
 }
-#issue-show .activity li:last-child {
+#issue_show_activity li:last-child {
   margin-bottom: 0;
 }
-#issue-show .activity li a {
+#issue_show_activity li a {
   color: #66f;
   text-decoration: none;
 }
-#issue-show .pictures .clear {
+#issue_show_pictures .clear {
   clear: both;
 }
-#issue-show .pictures ul {
+#issue_show_pictures ul {
   float: left;
   width: 100%;
 }
-#issue-show .pictures li {
+#issue_show_pictures li {
   float: left;
   width: 120px;
   height: 120px;
@@ -402,7 +352,7 @@ header nav li a {
   border: 1px solid #e0e0e0;
   text-align: center;
 }
-#issue-show .pictures img {
+#issue_show_pictures img {
   font-size: 13px;
   color: #909090;
   background: #e0e0e0;
@@ -491,4 +441,62 @@ header nav li a {
 #issue_map_frame {
   margin: 15px;
   height: 200px;
+}
+
+#main-nav {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccf;
+  box-shadow: 0 1px 2px #ccf;
+  float: left;
+  width: 100%;
+  height: 30px;
+  background: #fff;
+  overflow: hidden;
+  text-align: center;
+}
+#main-nav.loading {
+  background: #fff url(images/spinner.gif) no-repeat center center;
+}
+#main-nav.loading a {
+  opacity: 0.2 !important;
+}
+#main-nav li {
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  margin-right: 5px;
+}
+#main-nav li a {
+  transition: opacity 0.3s;
+  display: block;
+  line-height: 30px;
+  text-indent: -99999px;
+  outline: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: solid #fff;
+  border-width: 0 1px;
+  opacity: 0.5;
+}
+#main-nav li a:hover {
+  opacity: 1;
+}
+#main-nav li a.active {
+  border-color: #99f;
+  box-shadow: 0 0 5px #99f;
+  border-color: #ccf;
+  opacity: 1;
+}
+#main-nav li a.hot {
+  background-image: url(images/star.png);
+}
+#main-nav li a.date {
+  background-image: url(images/clock.png);
+}
+#main-nav li a.usuarios {
+  background-image: url(images/user.png);
+}
+#main-nav li a.agregados{
+  background-image: url(images/plus.png);
 }

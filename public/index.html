@@ -37,15 +37,8 @@
           </div>
         </div>
         <div id="content">
-
-          <div class="intro">
-            <h1>Ombud</h1>
-            <img src="images/logo.png" />
-            <p>Ombud es un sistema que actúa como Ombudsman entre tú y los entes estatales encargados de cuidar tu ciudad. Te ayuda a informarlos de problemas como calles en mal estado, basura, alumbrado público dañado o situaciones peligrosas en tu barrio.</p>
-            <p>La idea es catalogar la información y hacer llegar los reportes de incidentes a las entidades o personas que puedan darle una solución. Los datos generados son abiertos y usamos la tecnología de datos abiertos de OpenStreetMap para proveer geolocalización a la información.</p>
-          </div>
-
-          <div id="hot-issue-list"></div>
+          <nav id="main-nav">
+          </nav>
           <div id="issue-list"></div>
           <div id="issue-show"></div>
         </div>
@@ -67,10 +60,11 @@
       Ombuds.Routers = {};
     </script>
 
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+
     <script src="libraries/jquery.js"></script>
     <script src="libraries/underscore.js"></script>
     <script src="libraries/backbone.js"></script>
-    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 
     <script src="helpers/application_helper.js"></script>
 
@@ -81,6 +75,7 @@
     <script src="models/tag.js"></script>
     <script src="collections/issues.js"></script>
     <script src="collections/tags.js"></script>
+    <script src="collections/navigation_tags.js"></script>
     <script src="collections/hot_issues.js"></script>
     <script src="collections/issue_replies.js"></script>
     <script src="collections/issue_activity.js"></script>
@@ -91,8 +86,10 @@
     <script src="views/issue_show_replies.js"></script>
     <script src="views/issue_show_activity.js"></script>
     <script src="views/issue_show_pictures.js"></script>
+    <script src="views/issue_show_map.js"></script>
     <script src="views/tag_list.js"></script>
     <script src="views/hot_issue_list.js"></script>
+    <script src="views/main_nav.js"></script>
     <script src="views/main.js"></script>
 
     <script src="routers/issues_router.js"></script>

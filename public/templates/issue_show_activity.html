@@ -1,5 +1,6 @@
+<h3>Actividad</h3>
 <ul>
   <% _.each(activities, function (activity) { %>
-  <li><a href=""><%= activity.get('author') %></a> <%= activity.get('action') %> el <%= activity.get('date') %></li>
+  <li><strong><%= activity.get('date') %></strong> - <a href=""><%= activity.get('author') %></a> <%= activity.get('action') %></li>
   <% }) %>
 </ul>

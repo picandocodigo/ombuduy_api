@@ -1,0 +1,7 @@
+<ul>
+  <li><a class="hot" href="#/destacados" title="Reportes destacados">Destacados</a></li>
+  <li><a class="date" href="#/ultimos" title="Ultimos reportes">Ultimos reportes</a></li>
+  <% _.each(tags, function (tag) { %>
+  <li><a class="nav-tag tag-<%= tag.get('id') %> <%= tag.get('name') %>" href="#/categorias/<%= tag.get('id') %>" title='Reportes en "<%= tag.get('name') %>"'>Reportes en "<%= tag.get('name') %>"</a></li>
+  <% }) %>
+</ul>
