@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121206021711) do
+ActiveRecord::Schema.define(:version => 20121207165208) do
 
   create_table "issues", :force => true do |t|
     t.integer  "relevance",       :default => 0
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20121206021711) do
     t.integer  "fixed",           :default => 0
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
+    t.string   "fixed_by"
   end
 
   create_table "issues_tags", :force => true do |t|

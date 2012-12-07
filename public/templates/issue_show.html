@@ -1,6 +1,9 @@
 <h1><%= issue.get('text') %></h1>
 
 <div class="info">
+  <% if (!!issue.get('fixed_by')) { %>
+  <p class="fixed_by">Solucionado por <%= issue.get('fixed_by') %></p>
+  <% } %>
   <p class="tags"><% _.each(issue.get('tags'), function (tag, i) { %><%= tag %><% if (i !== issue.get('tags').length - 1) { %>, <% } %><% }) %></p>
   <p class="relevance">
     <span><% if (issue.get('relevance') >= 0) { %>+<% } %><%= issue.get('relevance') %></span>

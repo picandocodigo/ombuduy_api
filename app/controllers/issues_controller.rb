@@ -45,7 +45,7 @@ class IssuesController < ApplicationController
   end
 
   def hot
-    render json: Issue.order('relevance DESC').limit(30)
+    render json: Issue.where('fixed_by IS NULL').order('relevance DESC').limit(30)
   end
 
   def replies

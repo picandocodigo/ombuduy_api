@@ -1,5 +1,5 @@
 class Issue < ActiveRecord::Base
-  attr_accessible :relevance, :address, :latitude, :longitude, :image_url, :text, :user_id, :twitter_user_id, :tweet_id, :fixed
+  attr_accessible :relevance, :address, :latitude, :longitude, :image_url, :text, :user_id, :twitter_user_id, :tweet_id, :fixed_by
 
   has_and_belongs_to_many :tags
   has_many :replies
@@ -14,6 +14,7 @@ class Issue < ActiveRecord::Base
     json[:author] = random_author
     json[:created_at] = self.created_at
     json[:relevance] = self.relevance
+    json[:fixed_by] = self.fixed_by
     json
   end
 

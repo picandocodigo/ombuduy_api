@@ -215,7 +215,7 @@ header .add:hover {
   border-bottom: 1px dotted #e0e0e0;
 }
 #issue-show .info {
-  height: 85px;
+  height: 105px;
 }
 #issue-show .info p {
   font-size: 13px;
@@ -268,6 +268,13 @@ header .add:hover {
 #issue-show .info p.author {
   padding-left: 22px;
   background: url(images/user.png) no-repeat left 3px;
+}
+#issue-show .info p.fixed_by {
+  font-weight: bold;
+  padding-left: 22px;
+  background: url(images/tick-red.png) no-repeat left 3px;
+  color: #0c0;
+  text-shadow: 1px 1px 0 #f0f0f0;
 }
 
 #issue-show .box {
