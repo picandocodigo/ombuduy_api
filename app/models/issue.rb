@@ -6,6 +6,12 @@ class Issue < ActiveRecord::Base
 
   has_one :user
 
+  before_save do
+    if !!(fixed_by =~ /^[-+]?[0-9]+$/)
+      fixed_by = Entity.find(fixed_by)
+    end
+  end
+
   def as_json(options)
     json = {}
     json[:tags] = self.tags.map { |t| t.name }
