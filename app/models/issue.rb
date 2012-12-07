@@ -7,8 +7,8 @@ class Issue < ActiveRecord::Base
   has_one :user
 
   before_save do
-    if !!(fixed_by =~ /^[-+]?[0-9]+$/)
-      fixed_by = Entity.find(fixed_by)
+    if self.fixed_by.to_s =~ /^[0-9]+$/
+      self.fixed_by = Entity.find(self.fixed_by).name
     end
   end
 
