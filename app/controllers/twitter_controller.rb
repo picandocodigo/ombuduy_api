@@ -10,7 +10,8 @@ class TwitterController < ApplicationController
                       latitude: params["latitude"].to_f,
                       longitude: params["longitude"].to_f,
                       tweet_id: params["tweet_id"],
-                      user_id: user.id
+                      user_id: user.id,
+                      author: params["author"]
                       )
 
     get_tags(params, issue)
@@ -29,7 +30,8 @@ class TwitterController < ApplicationController
                         text: params["message"],
                         tweet_id: params["tweet_id"],
                         user_id: params["user_id"],
-                        image_url: params["image_url"]
+                        image_url: params["image_url"],
+                        author: params["author"];
                         )
 
       if reply.save
