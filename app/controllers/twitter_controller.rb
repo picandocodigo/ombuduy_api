@@ -17,7 +17,7 @@ class TwitterController < ApplicationController
     get_tags(params, issue)
 
     if issue.save
-      render json: "/reportes/#{issue.id}", status: 201
+      render json: "/#/reportes/#{issue.id}", status: 201
     else
       render text: "Error", status: 400
     end
