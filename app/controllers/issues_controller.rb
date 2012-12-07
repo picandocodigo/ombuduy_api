@@ -48,6 +48,10 @@ class IssuesController < ApplicationController
     render json: Issue.where('fixed_by IS NULL').order('relevance DESC').limit(30)
   end
 
+  def fixed
+    render json: Issue.where('fixed_by IS NOT NULL').order('created_at DESC').limit(30)
+  end
+
   def replies
     render json: Issue.find(params[:id]).replies
   end

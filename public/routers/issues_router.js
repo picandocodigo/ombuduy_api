@@ -20,12 +20,18 @@
       'reportes/:id': 'issueShow',
       'categorias/:id': 'tagShow',
       'ultimos': 'issueList',
-      'destacados': 'hotIssueList'
+      'destacados': 'hotIssueList',
+      'solucionados': 'fixedIssueList'
     },
 
     hotIssueList: function () {
       this.mainNav.highlightHot();
       this.mainView.showIssueList('Reportes destacados', new Ombuds.Collections.HotIssues());
+    },
+
+    fixedIssueList: function () {
+      this.mainNav.highlightFixed();
+      this.mainView.showIssueList('Reportes solucionados', new Ombuds.Collections.FixedIssues());
     },
 
     issueList: function () {

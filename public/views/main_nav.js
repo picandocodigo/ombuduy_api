@@ -40,6 +40,14 @@
       });
     },
 
+    highlightFixed: function () {
+      var that = this;
+      that.fetch(function () {
+        that.removeHighlights();
+        that.$el.find('a.fixed').addClass('active');
+      });
+    },
+
     highlightDate: function () {
       var that = this;
       that.fetch(function () {

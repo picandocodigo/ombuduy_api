@@ -5,6 +5,7 @@ OmbuduyApi::Application.routes.draw do
   resources :issues do
     collection do
       get :hot
+      get :fixed
     end
     member do
       get :replies

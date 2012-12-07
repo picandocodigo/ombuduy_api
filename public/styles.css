@@ -525,6 +525,9 @@ header .add:hover {
 #main-nav li a.date {
   background-image: url(images/clock.png);
 }
+#main-nav li a.fixed {
+  background-image: url(images/tick-red.png);
+}
 #main-nav li a.usuarios {
   background-image: url(images/user.png);
 }
