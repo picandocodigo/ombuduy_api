@@ -13,7 +13,7 @@ class TagsController < ApplicationController
   end
 
   def unfixed
-    render :json => Tag.find(params[:id]).issues.where('unfixed IS NULL').order('relevance DESC')
+    render :json => Tag.find(params[:id]).issues.where('fixed_by IS NULL').order('relevance DESC')
   end
 
   def navigation
