@@ -31,7 +31,7 @@ class TwitterController < ApplicationController
                         tweet_id: params["tweet_id"],
                         user_id: params["user_id"],
                         image_url: params["image_url"],
-                        author: params["author"];
+                        author: params["author"]
                         )
 
       if reply.save
