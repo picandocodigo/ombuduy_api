@@ -42,6 +42,7 @@
           that.activityView.fetch();
           that.picturesView.fetch();
           that.mapView.render(this.model);
+          $('title').html(Ombuds.AppName + ' - ' + that.model.get('text'));
       });
     },
 

@@ -14,6 +14,7 @@
         title: this.title,
         issues: this.collection.models
       });
+      this.setTitle(this.title);
     },
 
     fetch: function (callback) {
@@ -37,6 +38,7 @@
     },
 
     setTitle: function (title) {
+      $('title').html(Ombuds.AppName + ' - ' + title);
       this.$el.find('h1').html(title);
     }
   
