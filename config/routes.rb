@@ -22,6 +22,7 @@ OmbuduyApi::Application.routes.draw do
     end
     member do
       get :issues
+      get :unfixed
     end
   end
 

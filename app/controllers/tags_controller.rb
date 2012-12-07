@@ -12,6 +12,10 @@ class TagsController < ApplicationController
     render :json => Tag.find(params[:id]).issues.order('created_at DESC')
   end
 
+  def unfixed
+    render :json => Tag.find(params[:id]).issues.where('unfixed IS NULL').order('relevance DESC')
+  end
+
   def navigation
     render :json => Tag.where(:navigation => 1)
   end
