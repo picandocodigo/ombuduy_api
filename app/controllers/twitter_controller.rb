@@ -65,7 +65,6 @@ class TwitterController < ApplicationController
   end
 
   def get_tags(params, issue)
-    require 'debugger'; debugger
     unless params["hashtags"].nil?
       params["hashtags"].each do |hashtag|
         if (tag = Tag.where(name: hashtag[:text]).first).nil?
