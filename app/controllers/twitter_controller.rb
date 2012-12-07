@@ -13,14 +13,7 @@ class TwitterController < ApplicationController
                       user_id: user.id
                       )
 
-    unless params["hastags"].nil?
-      params["hashtags"].each do |hashtag|
-        if (tag = Tag.where(title: hashtag[:title]).first).nil?
-          tag = Tag.create(title: hashtag[:title])
-        end
-        issue.add_tag(tag) unless tag.title =~ /ombuduy/i
-      end
-    end
+    get_tags(params, issue)
 
     if issue.save
       render json: "/reportes/#{issue.id}", status: 201
@@ -68,6 +61,17 @@ class TwitterController < ApplicationController
       issue.relevance ||= 0
       issue.relevance += 1
       issue
+    end
+  end
+
+  def get_tags(params, issue)
+    unless params["hashtags"].nil?
+      params["hashtags"].each do |hashtag|
+        if (tag = Tag.where(name: hashtag[:text]).first).nil?
+          tag = Tag.create(name: hashtag[:text])
+        end
+        issue.add_tag(tag) unless tag.name =~ /ombuduy/i
+      end
     end
   end
 
