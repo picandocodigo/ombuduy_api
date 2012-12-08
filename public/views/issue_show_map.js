@@ -12,9 +12,9 @@
         },
         function () {
           map = new OpenLayers.Map("issue_show_map_frame");
-          map.addLayer(new OpenLayers.Layer.OSM());
- 
-          var lonLat = new OpenLayers.LonLat(this.model.get('longitude'), this.model.get('latitude'))
+            map.addLayer(new OpenLayers.Layer.OSM());
+            // TODO: AGARRAR STRING CON LAS COSAS DEL MODEL:
+            var lonLat = new OpenLayers.LonLat("-56.1593298", "-34.9121501")
               .transform(
                 new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
                 map.getProjectionObject() // to Spherical Mercator Projection

@@ -22,6 +22,8 @@ class Issue < ActiveRecord::Base
     json[:relevance] = self.relevance
     json[:fixed_by] = self.fixed_by
     json[:image_url] = self.image_url
+    json[:latitude] = self.latitude
+    json[:longitude] = self.longitude
     json
   end
 

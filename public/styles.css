@@ -303,8 +303,11 @@ header .add:hover {
 }
 #issue_show_pictures,
 #issue_show_map {
-  width: 224px;
   float: left;
+}
+#issue_show_map_frame{
+  width: 465px;
+  height: 400px;
 }
 #issue_show_pictures {
   margin-right: 15px;
